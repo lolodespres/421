@@ -20,7 +20,7 @@ versions utilisé:
 
 Ouvrir dans votre navigateur http://localhost:8001 et c'est fait ;)
 
-sinon pour jouer sur github pages voici le lien https://lotiko.github.io/421/public/
+sinon pour jouer sans installer voici le lien https://loolood.fr
 
 ## Le jeu
 
