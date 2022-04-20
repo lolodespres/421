@@ -27,7 +27,7 @@ const powerByComboCombi = {
   234: 2.2,
   123: 2.1,
 };
-const massageCombi = {
+const messageCombi = {
   124: "421",
   111: "Mac 1",
   116: "Mac 6",
