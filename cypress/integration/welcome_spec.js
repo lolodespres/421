@@ -63,7 +63,7 @@ describe('Player 2 action => ', () => {
             list[index].click();
             const srcAvatar = list[index].attributes.src.nodeValue;
             cy.get("#avatar-player img").invoke("attr", 'src').then(src => {
-                expect(Cypress.$(item)[0].src).to.equal(`${URL}/${srcAvatar}`)
+                expect(Cypress.$(item)[0].src).to.equal(`${URL}/${srcAvatar}plop`)
             });
         });
         cy.log("All of 8 avatar can be choose for player one");
