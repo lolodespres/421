@@ -30,7 +30,10 @@ jobs:
         run: npm i
 
       # Runs a set of commands using the runners shell
-      - name: Star 421 and tests
+      - name: Start 421 
         run: |
-          npm start &
-          npx cypress run
+          npm start 
+
+      - name: tests
+        run: |
+          npm start 
