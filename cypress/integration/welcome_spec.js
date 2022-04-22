@@ -88,13 +88,13 @@ describe('421 game => ', () => {
             titlePlayer.should("have.text", 'Joueur 2');
             cy.get('#name').invoke('val', 'player2').then(val => {
                 validPlayer.click();
+                it('Info player 2 in session storage', () => {
+                    checkSession(2);
+                });
             });
             cy.log("Player 2 ready go next test")
         });
 
-        it('Info player 2 in session storage', () => {
-            checkSession(2);
-        });
 
     });
     describe('Check starter view => ', () => {
