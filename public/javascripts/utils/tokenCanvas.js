@@ -10,7 +10,7 @@
 const dotColor = "#ffff";
 const dots = [];
 const size = 20;
-//define dot locations
+
 function removeToken(tokenEl) {
   tokenEl.width = tokenEl.width; // hack to clean canvas
 }
