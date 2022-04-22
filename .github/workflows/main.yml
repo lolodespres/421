@@ -31,9 +31,7 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Start 421 
-        run: |
-          npm start 
+        run: npm start &
 
       - name: tests
-        run: |
-          npm start 
+        run: npx cypress run
