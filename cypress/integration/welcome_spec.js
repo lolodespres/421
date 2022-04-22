@@ -12,7 +12,7 @@ function checkAvatarCanBeChoose() {
 }
 function checkSession(nbPlayer) {
     cy.window().then(win => {
-        const playerSession = JSON.parse(win.sessionStorage.getItem(`player${nbPlayer}Info`));
+        let playerSession = JSON.parse(win.sessionStorage.getItem(`player${nbPlayer}Info`));
         expect(playerSession.name).to.equal(`player${nbPlayer}`);
         expect(playerSession.avatarPath).to.equal('images/avatars/av8.png');
     });
