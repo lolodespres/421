@@ -9,8 +9,8 @@ const avatarsName: { [man: string]: string[]; women: string[] } = {
 // INTERFACES
 export interface ISettingsboxProps {
     nbPlayer: number;
+    setPlayer: Function;
 }
-
 export interface IPlayerBoxProps {
     nbPlayer: number;
     nameAvatar: string;
@@ -39,13 +39,15 @@ export default function Settingsbox(props: ISettingsboxProps) {
 
 
 function PlayerBox(props: IPlayerBoxProps) {
-    const [name, setname] = useState("");
-    
+    const [name, setName] = useState("");
+    const handleChangeName = (name:string) => {
+        setName(name);
+    }
     return (
         <div id="player-box">
             <h2>{`Joueur ${props.nbPlayer}`}</h2>
             <label>Nom (1 à 8 lettres):</label>
-            <input type="text" id="name" name="name" minLength={1} maxLength={8} size={9} />
+            <input type="text" id="name" value={name} name="name" minLength={1} maxLength={8} size={9} onChange={(e) => handleChangeName(e.target.value)}/>
             <div id="avatar-player">
                 {props.nameAvatar !== "" && <img src={`images/avatars/${props.nameAvatar}.png`} alt="avatar" className={`avatar-item ${props.nameAvatar}`} />}
             </div>

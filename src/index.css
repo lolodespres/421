@@ -1,7 +1,8 @@
 * {
     box-sizing: border-box;
-    margin:0;
-    padding:0;
+}
+#app-root {
+    margin: auto;
 }
 /********************** Only landscape for this game ***************/
 @media only screen and (orientation: portrait) {
