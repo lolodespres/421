@@ -1,14 +1,16 @@
 import React from 'react'
+import { Routes, Route, Link } from "react-router-dom";
+import Welcome from './welcome';
 
 
 
-const App = () =>  {
+const App = () => {
 
-        return(
-            <>
-            <h1>421</h1>
-            </>
-        );
+    return (
+        <Routes>
+            <Route path="/" element={<Welcome />} />
+        </Routes>
+    );
 }
 
 export default App;

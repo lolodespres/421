@@ -3,7 +3,50 @@
     margin:0;
     padding:0;
 }
-body {
-    color: darkblue;
+/********************** Only landscape for this game ***************/
+@media only screen and (orientation: portrait) {
+    body {
+      display: flex;
+      height: 100vh;
+      background-image: url(https://image.freepik.com/photos-gratuite/vieille-plaque-metal-texture-brossee-cuivre-fond-bronze_84485-6.jpg);
+      background-size: cover;
+    }
+    #wrapper {
+      display: none;
+    }
+    #avertissement {
+      display: flex;
+      margin: 5%;
+      font: italic small-caps bold 100%/3 "Fredoka One";
+      align-self: center;
+      border: 2px solid brown;
+      box-shadow: 0 0 0 4px black;
+      border-radius: 5px;
+    }
+  }
+  @media only screen and (orientation: landscape) {
+    * {
+      box-sizing: border-box;
+    }
+    #avertissement {
+      display: none;
+    }
+    body {
+      font: 400 100%/1 "Fredoka One";
+      text-align: center;
+      --boardgame-color: #00724e;
+      height: 100vh;
+      background-image: url(https://image.freepik.com/photos-gratuite/vieille-plaque-metal-texture-brossee-cuivre-fond-bronze_84485-6.jpg);
+      background-size: cover;
+      margin: 0;
+    }
+  
+    button {
+      font-family: inherit;
+      color: wheat;
+      background-color: black;
+      border: 1px solid black;
+      border-radius: 5px;
+    }
   }
   
