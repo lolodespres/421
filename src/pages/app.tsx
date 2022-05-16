@@ -1,6 +1,7 @@
 import React from 'react'
 import { Routes, Route, Link } from "react-router-dom";
 import Welcome from './welcome';
+import Game421 from '../components/game/Game421';
 
 
 
@@ -11,6 +12,7 @@ const App = () => {
             <div id="wrapper">
                 <Routes>
                     <Route path="/" element={<Welcome />} />
+                    <Route path="/421" element={<Game421 />} />
                 </Routes>
             </div>
             <div id="avertissement" className="container">

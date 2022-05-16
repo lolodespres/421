@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import Settingsbox from '../components/SettingsBox';
+import Settingsbox from '../components/welcome/SettingsBox';
 import '../styles/welcome.css';
 
 interface IPlayer {
@@ -23,20 +23,14 @@ const playersInfo:IPlayers = {
         avatar: ""
     }
 }
-export interface IWelcomeProps {
-
-}
+export interface IWelcomeProps {}
 
 export default function Welcome(props: IWelcomeProps) {
-    const [player, setplayer] = useState(1);
-    const [players, setplayers] = useState(playersInfo);
-    const setPlayer = (nbPlayer: number, playerInfo: IPlayer) => {
-        setplayers({ [`player${nbPlayer}`]: playerInfo, ...players })
-    }
+    
     return (
         <>
             <Header view="set" />
-            <Settingsbox nbPlayer={player} setPlayer={setPlayer} />
+            <Settingsbox/>
             <Footer/>
         </>
     );
