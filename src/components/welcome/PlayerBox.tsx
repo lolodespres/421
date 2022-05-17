@@ -43,7 +43,7 @@ export const PlayerBox = (props: IPlayerBoxProps) => {
             setName("");
             props.resetAvatar("");
         } else {
-            navigate('/421');
+            navigate('421');
         }
     }
     return (

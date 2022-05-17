@@ -16,11 +16,10 @@ const container = document.getElementById('app-root') as HTMLElement;
 const root = ReactDOMClient.createRoot(container); // createRoot(container!) if you use TypeScript
 root.render(
     <React.StrictMode>
-        <BrowserRouter>
         <Provider store={store}>
-
+        <BrowserRouter>
             <App />
-        </Provider>
         </BrowserRouter>
+        </Provider>
     </React.StrictMode>
 );

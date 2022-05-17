@@ -12,7 +12,7 @@ const App = () => {
             <div id="wrapper">
                 <Routes>
                     <Route path="/" element={<Welcome />} />
-                    <Route path="/421" element={<Game421 />} />
+                    <Route path="421" element={<Game421 />} />
                 </Routes>
             </div>
             <div id="avertissement" className="container">
