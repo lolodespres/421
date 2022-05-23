@@ -3,6 +3,7 @@ import Header from '../Header';
 import PlayerBoxGame from './PlayerBoxGame';
 import store from '../../store';
 import "./game.css";
+import PotBoxGame from './pot';
 export interface IPropsGame421 {
 
 }
@@ -23,7 +24,8 @@ export default function Game421(props: IPropsGame421) {
                     <canvas className="dices" id="d3-p1" width="34" height="34"></canvas>
                 </div>
                 <div className="gameboard">
-                    <div id="pot" className="container tokens-box">
+                    <PotBoxGame />
+                    {/* <div id="pot" className="container tokens-box">
                         <canvas id="tb-1" className="token-board token" width="20" height="20"></canvas>
                         <canvas id="tb-2" className="token-board token" width="20" height="20"></canvas>
                         <canvas id="tb-3" className="token-board token" width="20" height="20"></canvas>
@@ -45,7 +47,7 @@ export default function Game421(props: IPropsGame421) {
                         <canvas id="tb-19" className="token-board token" width="20" height="20"></canvas>
                         <canvas id="tb-20" className="token-board token" width="20" height="20"></canvas>
                         <canvas id="tb-21" className="token-board token" width="20" height="20"></canvas>
-                    </div>
+                    </div> */}
                     <div id="dice-box-board">
                         <div className="scene-d1 scene">
                             <canvas className="dices" id="d1-board" width="34" height="34"></canvas>
