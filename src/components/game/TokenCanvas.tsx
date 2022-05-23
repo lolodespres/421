@@ -6,6 +6,7 @@ export interface IPropsTokenCanvas {
     className: string;
     width: number;
     height: number;
+    draw: boolean;
 
 }
 export default function TokenCanvas(props: IPropsTokenCanvas) {
@@ -13,7 +14,7 @@ export default function TokenCanvas(props: IPropsTokenCanvas) {
 
     useEffect(() => {
         const canvas: HTMLCanvasElement | null = canvasRef.current;
-        if(canvas) drawToken(canvas);
+        if(canvas && props.draw) drawToken(canvas);
     }, [])
 
     return <canvas ref={canvasRef} {...props} />

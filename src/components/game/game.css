@@ -1,0 +1,36 @@
+
+.main-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: #00724e;
+    width: 95%;
+    margin: auto;
+
+}
+.player-board {
+    display:block;
+    flex-direction: column;
+    max-width: 15%;
+    flex-wrap: wrap;
+}
+
+.dice-box {
+    margin: auto;
+    display: block;
+    flex-direction: column;
+    max-height: 155px;
+    max-width: 50px;
+}
+.gameboard {
+    height: 100%;
+    width: 30%;
+}
+.tokens-box {
+    margin: auto;
+    display: block;
+}
+.avatar {
+    max-width: 50px;
+    margin: auto;
+}

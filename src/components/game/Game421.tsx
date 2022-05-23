@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Header from '../Header';
 import PlayerBoxGame from './PlayerBoxGame';
 import store from '../../store';
+import "./game.css";
 export interface IPropsGame421 {
 
 }
@@ -14,14 +15,14 @@ export default function Game421(props: IPropsGame421) {
     return (
         <>
             <Header view="game"></Header>
-            <main className="main-container">
+            <main className="main-container container">
                 <PlayerBoxGame name={p1.name} numberPlayer={1} pathAvatar={p1.avatarPath}></PlayerBoxGame>
                 <div id="dice-box-1" className="dice-box container">
                     <canvas className="dices" id="d1-p1" width="34" height="34"></canvas>
                     <canvas className="dices" id="d2-p1" width="34" height="34"></canvas>
                     <canvas className="dices" id="d3-p1" width="34" height="34"></canvas>
                 </div>
-                <div id="gameboard">
+                <div className="gameboard">
                     <div id="pot" className="container tokens-box">
                         <canvas id="tb-1" className="token-board token" width="20" height="20"></canvas>
                         <canvas id="tb-2" className="token-board token" width="20" height="20"></canvas>

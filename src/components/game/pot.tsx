@@ -9,11 +9,11 @@ export interface IPropsPlayerBoxGame {
     name: string;
 
 }
-function createTokens(nbPlayer:number) {
+function createPot() {
     let tokens = [];
     let currentToken = 1;
     while(currentToken <= 21) {
-        tokens.push(<TokenCanvas key={`${nbPlayer}${currentToken}`} id={`tp${nbPlayer}-1`} className={`token-p${nbPlayer} token`} width={20} height={20} draw={false}/>);
+        tokens.push(<TokenCanvas key={`pot${currentToken}`} className={`token-pot token`} width={20} height={20} draw={true} id={'token-pot'+currentToken}/>);
         currentToken++;
     }
     return tokens;
