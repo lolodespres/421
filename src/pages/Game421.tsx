@@ -5,6 +5,8 @@ import store from '../store';
 import "../styles/game.css";
 import PotBoxGame from '../components/game/pot';
 import DicesBoxPlayer from '../components/game/Dices';
+import { DiceCanvas } from '../utils/diceCanvas';
+import { Cube } from '../components/game/Cubes';
 export interface IPropsGame421 {
 
 }
@@ -24,47 +26,21 @@ export default function Game421(props: IPropsGame421) {
                     <PotBoxGame />
                     <div id="dice-box-board">
                         <div className="scene-d1 scene">
-                            <canvas className="dices" id="d1-board" width="34" height="34"></canvas>
-                            <div id="cube-d1" className="cube">
-                                <div className="cube__face cube__face--front"></div>
-                                <div className="cube__face cube__face--back"></div>
-                                <div className="cube__face cube__face--right"></div>
-                                <div className="cube__face cube__face--left"></div>
-                                <div className="cube__face cube__face--top"></div>
-                                <div className="cube__face cube__face--bottom"></div>
-                            </div>
+                            <DiceCanvas id="d1-board" draw={true}/>
+                            <Cube nb={1}/>
                         </div>
 
                         <div className="scene-d2 scene">
-                            <canvas className="dices" id="d2-board" width="34" height="34"></canvas>
-                            <div id="cube-d2" className="cube">
-                                <div className="cube__face cube__face--front"> </div>
-                                <div className="cube__face cube__face--back"> </div>
-                                <div className="cube__face cube__face--right"> </div>
-                                <div className="cube__face cube__face--left"> </div>
-                                <div className="cube__face cube__face--top"> </div>
-                                <div className="cube__face cube__face--bottom"> </div>
-                            </div>
+                            <DiceCanvas id="d2-board" draw={true}/>
+                            <Cube nb={2}/>
                         </div>
 
                         <div className="scene-d3 scene">
-                            <canvas className="dices" id="d3-board" width="34" height="34"></canvas>
-                            <div id="cube-d3" className="cube">
-                                <div className="cube__face cube__face--front"> </div>
-                                <div className="cube__face cube__face--back"> </div>
-                                <div className="cube__face cube__face--right"> </div>
-                                <div className="cube__face cube__face--left"> </div>
-                                <div className="cube__face cube__face--top"> </div>
-                                <div className="cube__face cube__face--bottom"> </div>
-                            </div>
+                            <DiceCanvas id="d3-board" draw={true}/>
+                            <Cube nb={3}/>
                         </div>
                     </div>
                 </div>
-                {/* <div id="dice-box-2" className="dice-box container">
-                    <canvas className="dices" id="d1-p2" width="34" height="34"></canvas>
-                    <canvas className="dices" id="d2-p2" width="34" height="34"></canvas>
-                    <canvas className="dices" id="d3-p2" width="34" height="34"></canvas>
-                </div> */}
                 <DicesBoxPlayer nbPlayer={2}/>
                 <PlayerBoxGame name={p2.name} numberPlayer={2} pathAvatar={p2.avatarPath}/>
             </main>
