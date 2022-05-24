@@ -1,26 +1,33 @@
+import React, { useEffect, useRef } from 'react';
+import { useState } from 'react';
 
-import React from 'react';
-import TokenCanvas from "../components/game/TokenCanvas";
-function createTokens(nbPlayer:number = 0) {
-  let tokens = [];
-  let currentToken = 1;
-  while(currentToken <= 21) {
-      tokens.push(<TokenCanvas key={`${nbPlayer}${currentToken}`} id={`tp${nbPlayer}-1`} className={`token-p${nbPlayer} token`} width={20} height={20} draw={false}/>);
-      currentToken++;
-  }
-  return tokens;
+export interface IPropsTokenCanvas {
+  id: string;
+  className: string;
+  width: number;
+  height: number;
+  draw: boolean;
+
 }
+export default function TokenCanvas(props: IPropsTokenCanvas) {
+  const canvasRef = useRef(null)
+
+  useEffect(() => {
+    const canvas: HTMLCanvasElement | null = canvasRef.current;
+    if (canvas && props.draw === true) { drawToken(canvas); };
+  }, [])
+  return <canvas ref={canvasRef} className="token" id={props.id} width="20" height="20" />
+}
+
 ///////// CANVAS UTILS
-const dotColor = "#ffff";
-const dots = [];
-const size = 20;
+
 
 function removeToken(tokenEl: HTMLCanvasElement) {
   tokenEl.width = tokenEl.width; // hack to clean canvas
 }
-function drawToken(token: HTMLCanvasElement | null) {
-  if (token?.getContext) {
-    const ctx: CanvasRenderingContext2D = token.getContext("2d") as CanvasRenderingContext2D;
+function drawToken(token: HTMLCanvasElement) {
+  const ctx = token.getContext("2d");
+  if (ctx) {
     token.width = token.width; // hack to clean canvas
     ctx.beginPath();
     // ctx.arc(x, y, radius, startAngle, endAngle)
@@ -40,6 +47,3 @@ function drawToken(token: HTMLCanvasElement | null) {
     ctx.closePath();
   }
 }
-
-export { drawToken, removeToken };
-

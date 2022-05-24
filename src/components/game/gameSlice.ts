@@ -11,15 +11,20 @@ export interface ITokens {
     p2: number;
     pot: number
 }
+export type TTokenMove = {
+    player: number;
+    nbTokens: number;
+
+}
 export const tokenSlice = createSlice({
     name: 'tokens',
     initialState: initialState,
     reducers: {
-        addTokenFromPot: (state: ITokens, pinfo: { payload: { player: number; nbTokens: number }, type: string; }) => {
+        addTokenFromPot: (state: ITokens, pinfo: { payload: TTokenMove, type: string; }) => {
             state[`p${pinfo.payload.player}`] += pinfo.payload.nbTokens;
             state.pot <= pinfo.payload.nbTokens ? state.pot = 0 : state.pot -= pinfo.payload.nbTokens;
         },
-        winToken: (state: ITokens, pinfo:{payload: { player: number; nbTokens: number }, type: string}) => {
+        winToken: (state: ITokens, pinfo: { payload: TTokenMove, type: string }) => {
             let winner = pinfo.payload.player === 1 ? "p1" : "p2";
             let loser = pinfo.payload.player === 1 ? "p2" : "p1";
             state[winner] += pinfo.payload.nbTokens;
@@ -31,3 +36,24 @@ export const tokenSlice = createSlice({
 export const { addTokenFromPot, winToken } = tokenSlice.actions
 
 export default tokenSlice.reducer
+
+// export const diceSlice = createSlice({
+//     name: 'tokens',
+//     initialState: initialState,
+//     reducers: {
+//         addTokenFromPot: (state: ITokens, pinfo: { payload: TTokenMove, type: string; }) => {
+//             state[`p${pinfo.payload.player}`] += pinfo.payload.nbTokens;
+//             state.pot <= pinfo.payload.nbTokens ? state.pot = 0 : state.pot -= pinfo.payload.nbTokens;
+//         },
+//         winToken: (state: ITokens, pinfo: { payload: TTokenMove, type: string }) => {
+//             let winner = pinfo.payload.player === 1 ? "p1" : "p2";
+//             let loser = pinfo.payload.player === 1 ? "p2" : "p1";
+//             state[winner] += pinfo.payload.nbTokens;
+//             state[loser] -= pinfo.payload.nbTokens;
+//         }
+//     }
+// })
+
+// export const { addTokenFromPot, winToken } = tokenSlice.actions
+
+// export default tokenSlice.reducer

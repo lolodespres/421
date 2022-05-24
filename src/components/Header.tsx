@@ -7,7 +7,6 @@ export interface IHeaderProps {
 
 export default function Header(props: IHeaderProps) {
     const players = store.getState().players;
-    console.log(players)
     if (props.view === "set") {
         return (
             <header className="container">

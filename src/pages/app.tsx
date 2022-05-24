@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes, Route, Link } from "react-router-dom";
 import Welcome from './welcome';
-import Game421 from '../components/game/Game421';
+import Game421 from './Game421';
 
 
 

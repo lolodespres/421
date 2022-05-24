@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
-import store from '../../store';
-import TokenCanvas from './TokenCanvas';
+import TokenCanvas from '../../utils/tokenCanvas';
 
 export interface IPropsPlayerBoxGame {
     numberPlayer: number;

@@ -1,53 +1,27 @@
-import React, {useEffect, useState} from 'react';
-import Header from '../Header';
-import PlayerBoxGame from './PlayerBoxGame';
-import store from '../../store';
-import "./game.css";
-import PotBoxGame from './pot';
+import React, {useEffect, useMemo, useState} from 'react';
+import Header from '../components/Header';
+import PlayerBoxGame from '../components/game/PlayerBoxGame';
+import store from '../store';
+import "../styles/game.css";
+import PotBoxGame from '../components/game/pot';
+import DicesBoxPlayer from '../components/game/Dices';
 export interface IPropsGame421 {
 
 }
 export default function Game421(props: IPropsGame421) {
     const [p1, setp1] = useState(store.getState().players.p1);
     const [p2, setp2] = useState(store.getState().players.p2);
-    useEffect(() => {
-        console.log(p1,p2)
-    })
+    // useEffect(() => {
+    //     console.log("useEffect game", props)
+    // })
     return (
         <>
             <Header view="game"></Header>
             <main className="main-container container">
                 <PlayerBoxGame name={p1.name} numberPlayer={1} pathAvatar={p1.avatarPath}></PlayerBoxGame>
-                <div id="dice-box-1" className="dice-box container">
-                    <canvas className="dices" id="d1-p1" width="34" height="34"></canvas>
-                    <canvas className="dices" id="d2-p1" width="34" height="34"></canvas>
-                    <canvas className="dices" id="d3-p1" width="34" height="34"></canvas>
-                </div>
+                <DicesBoxPlayer nbPlayer={1}/>
                 <div className="gameboard">
                     <PotBoxGame />
-                    {/* <div id="pot" className="container tokens-box">
-                        <canvas id="tb-1" className="token-board token" width="20" height="20"></canvas>
-                        <canvas id="tb-2" className="token-board token" width="20" height="20"></canvas>
-                        <canvas id="tb-3" className="token-board token" width="20" height="20"></canvas>
-                        <canvas id="tb-4" className="token-board token" width="20" height="20"></canvas>
-                        <canvas id="tb-5" className="token-board token" width="20" height="20"></canvas>
-                        <canvas id="tb-6" className="token-board token" width="20" height="20"></canvas>
-                        <canvas id="tb-7" className="token-board token" width="20" height="20"></canvas>
-                        <canvas id="tb-8" className="token-board token" width="20" height="20"></canvas>
-                        <canvas id="tb-9" className="token-board token" width="20" height="20"></canvas>
-                        <canvas id="tb-10" className="token-board token" width="20" height="20"></canvas>
-                        <canvas id="tb-11" className="token-board token" width="20" height="20"></canvas>
-                        <canvas id="tb-12" className="token-board token" width="20" height="20"></canvas>
-                        <canvas id="tb-13" className="token-board token" width="20" height="20"></canvas>
-                        <canvas id="tb-14" className="token-board token" width="20" height="20"></canvas>
-                        <canvas id="tb-15" className="token-board token" width="20" height="20"></canvas>
-                        <canvas id="tb-16" className="token-board token" width="20" height="20"></canvas>
-                        <canvas id="tb-17" className="token-board token" width="20" height="20"></canvas>
-                        <canvas id="tb-18" className="token-board token" width="20" height="20"></canvas>
-                        <canvas id="tb-19" className="token-board token" width="20" height="20"></canvas>
-                        <canvas id="tb-20" className="token-board token" width="20" height="20"></canvas>
-                        <canvas id="tb-21" className="token-board token" width="20" height="20"></canvas>
-                    </div> */}
                     <div id="dice-box-board">
                         <div className="scene-d1 scene">
                             <canvas className="dices" id="d1-board" width="34" height="34"></canvas>
@@ -86,11 +60,12 @@ export default function Game421(props: IPropsGame421) {
                         </div>
                     </div>
                 </div>
-                <div id="dice-box-2" className="dice-box container">
+                {/* <div id="dice-box-2" className="dice-box container">
                     <canvas className="dices" id="d1-p2" width="34" height="34"></canvas>
                     <canvas className="dices" id="d2-p2" width="34" height="34"></canvas>
                     <canvas className="dices" id="d3-p2" width="34" height="34"></canvas>
-                </div>
+                </div> */}
+                <DicesBoxPlayer nbPlayer={2}/>
                 <PlayerBoxGame name={p2.name} numberPlayer={2} pathAvatar={p2.avatarPath}/>
             </main>
             <footer>
@@ -98,7 +73,7 @@ export default function Game421(props: IPropsGame421) {
                     recommence</div>
                 <div id="score" className="container"></div>
             </footer>
-            <div id="rules" className="modal">
+            {/* <div id="rules" className="modal">
                 <div className="modal-content">
                     <span className="close">&times;</span>
                     <h2>Comment jouer au 421</h2>
@@ -215,7 +190,7 @@ export default function Game421(props: IPropsGame421) {
                             </tr>
                         </tbody>
                     </table >
-                </div >
-            </div >
+                </div > */}
+            {/* </div > */}
         </>);
 }
