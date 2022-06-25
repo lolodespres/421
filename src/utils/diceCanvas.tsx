@@ -6,21 +6,30 @@
  * @summary: dice canvas uitils
  */
 ///////// CANVAS UTILS
-import React,{ useEffect, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { TObjectKeyStringValueNumber } from "../types/global"
 export interface IDiceProps {
   id: string;
   draw: boolean;
+  // type: string;
+  // index: number;
+  value: number;
 }
 export function DiceCanvas(props: IDiceProps) {
   const canvasRef = useRef(null)
-  // const [value, setvalue] = useState(1);
+  const [value, setvalue] = useState(props.value);
+  
   useEffect(() => {
-    const canvas: HTMLCanvasElement | null = canvasRef.current;
-      if (canvas && props.draw) drawDice(canvas as HTMLCanvasElement, 1);
-  }, [])
+    if(props.value !== value) setvalue(props.value);
+    else {
+      const canvas: HTMLCanvasElement | null = canvasRef.current;
+      if (canvas && props.draw === true) {
+        drawDice(canvas as HTMLCanvasElement, value);
+      }
+    }
+  });
   return (
-      <canvas ref={canvasRef} className="dices" id={props.id} width="34" height="34"></canvas>
+    <canvas ref={canvasRef} className="dices" id={props.id} width="34" height="34"></canvas>
   );
 }
 type TRoundRectArgs = {

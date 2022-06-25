@@ -1,0 +1,10 @@
+main {
+    margin: auto;
+    width: 95%;
+}
+body {
+    display: flex;
+    height: 100vh;
+    background-image: url(https://image.freepik.com/photos-gratuite/vieille-plaque-metal-texture-brossee-cuivre-fond-bronze_84485-6.jpg);
+    background-size: cover;
+}

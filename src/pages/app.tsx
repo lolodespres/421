@@ -2,6 +2,7 @@ import React from 'react'
 import { Routes, Route, Link } from "react-router-dom";
 import Welcome from './welcome';
 import Game421 from './Game421';
+import "../styles/base.css"
 
 
 

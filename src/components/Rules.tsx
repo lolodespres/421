@@ -1,13 +1,14 @@
 import * as React from 'react';
 
 export interface IRulesProps {
+    closeBtn: Function;
 }
 
-export function Rules(props: IRulesProps) {
+export default function Rules(props: IRulesProps) {
     return (
         <div id="rules" className="modal">
             <div className="modal-content">
-                <span className="close">&times;</span>
+                <span className="close" onClick={() => props.closeBtn()}>&times;</span>
                 <h2>Comment jouer au 421</h2>
                 <p>
                     On joue généralement le <strong>421</strong> en deux manches, la "charge" et la "décharge". L’ensemble des

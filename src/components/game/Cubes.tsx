@@ -6,7 +6,7 @@ export interface ICubeProps {
 
 export function Cube(props: ICubeProps) {
     return (
-        <div id={`cube-d${props.nb}`} className="cube">
+        <div id={`cube-d${props.nb}`} className="cube is-spinning">
             <div className="cube__face cube__face--front"></div>
             <div className="cube__face cube__face--back"></div>
             <div className="cube__face cube__face--right"></div>
