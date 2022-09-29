@@ -18,7 +18,11 @@ versions utilisé:
 - `$ npm install`
 - `$ npm start`
 
-Ouvrir dans votre navigateur http://localhost:8001 et c'est fait ;)
+Par default le 421 serat sur le port 80 sinon créer une variable PORT dans un fichier .env pour changer le port.
+
+Ouvrir dans votre navigateur http://localhost et c'est fait ;)
+
+Sinon pour le voir sur heroku https://hidden-chamber-19326.herokuapp.com/
 
 
 ## Le jeu
